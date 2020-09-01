@@ -65,8 +65,8 @@ jobs:
         # docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         # echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         sudo chmod +x docker-entrypoint.sh
-        docker-compose -p ci build
-        docker-compose -p ci up
+        # docker-compose -p ci build
+        docker-compose -p ci up --no-start
         docker tag ci_ctfd $ECR_REGISTRY/$ECR_REPOSITORY/ci_ctfd:$IMAGE_TAG
         docker tag nginx $ECR_REGISTRY/$ECR_REPOSITORY/ci_nginx:$IMAGE_TAG
         docker tag db $ECR_REGISTRY/$ECR_REPOSITORY/ci_db:$IMAGE_TAG
