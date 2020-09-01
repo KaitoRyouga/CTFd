@@ -77,7 +77,7 @@ jobs:
         # docker push $ECR_REGISTRY/$ECR_REPOSITORY/ci_nginx:$IMAGE_TAG
         # docker push $ECR_REGISTRY/$ECR_REPOSITORY/ci_db:$IMAGE_TAG
         # docker push $ECR_REGISTRY/$ECR_REPOSITORY/ci_cache:$IMAGE_TAG
-        docker-compose push $ECR_REGISTRY/$ECR_REPOSITORY/ci_ctfd:$IMAGE_TAG
+        # docker-compose push $ECR_REGISTRY/$ECR_REPOSITORY/ci_ctfd:$IMAGE_TAG
         docker-compose push $ECR_REGISTRY/$ECR_REPOSITORY/nginx:1.17
         docker-compose push $ECR_REGISTRY/$ECR_REPOSITORY/mariadb:10.4.12
         docker-compose push $ECR_REGISTRY/$ECR_REPOSITORY/redis:4
