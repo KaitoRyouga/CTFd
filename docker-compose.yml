@@ -27,7 +27,7 @@ services:
         internal:
 
   nginx:
-    image: $ECR_REGISTRY/$ECR_REPOSITORY/nginx:1.17
+    image: nginx:1.17
     volumes:
       - ./conf/nginx/http.conf:/etc/nginx/nginx.conf
     ports:
@@ -36,7 +36,7 @@ services:
       - ctfd
 
   db:
-    image: $ECR_REGISTRY/$ECR_REPOSITORY/mariadb:10.4.12
+    image: mariadb:10.4.12
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=ctfdkaito
@@ -51,7 +51,7 @@ services:
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
 
   cache:
-    image: $ECR_REGISTRY/$ECR_REPOSITORY/redis:4
+    image: redis:4
     restart: always
     volumes:
     - .data/redis:/data
