@@ -1,0 +1,24 @@
+{
+    "family": "ctflab",
+    "executionRoleArn": "arn:aws:iam::533784549673:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "ctflab",
+            "image": "533784549673.dkr.ecr.ap-southeast-1.amazonaws.com/ctflab:latest",
+            "portMappings": [
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
