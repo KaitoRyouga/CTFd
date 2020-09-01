@@ -2,6 +2,7 @@ version: '2'
 
 services:
   ctfd:
+    image: $ECR_REGISTRY/$ECR_REPOSITORY
     build: .
     user: root
     restart: always
